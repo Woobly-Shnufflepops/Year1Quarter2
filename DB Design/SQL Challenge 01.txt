@@ -1,0 +1,22 @@
+SELECT LastName, FirstName, HomePhone
+FROM Employees;
+
+SELECT CompanyName, City
+FROM Customers;
+
+SELECT CompanyName, City
+FROM Suppliers;
+
+SELECT ProductName, UnitPrice
+FROM Products;
+
+SELECT CompanyName, Phone
+FROM Customers;
+
+SELECT CompanyName, Phone
+FROM Suppliers;
+
+SELECT ProductName, UnitsInStock
+FROM Products;
+
+Matthew Powers

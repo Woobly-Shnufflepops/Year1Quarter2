@@ -1,0 +1,19 @@
+SELECT CompanyName, SUM ([UnitPrice]*[Quantity]) AS Total
+FROM (Customers INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID)
+INNER JOIN [Order Details] ON Orders.OrderID = [Order Details].OrderID
+GROUP BY CompanyName;
+
+SELECT ProductName, COUNT (Orders.OrderID) AS TotalOrders
+FROM (Products INNER JOIN [Order Details] ON Products.ProductID = [Order Details].ProductID)
+INNER JOIN Orders ON [Order Details].OrderID = Orders.OrderID
+GROUP BY ProductName;
+
+SELECT CompanyName, ProductName, SUM (Quantity * Products.UnitPrice) AS Total
+FROM (Suppliers INNER JOIN Products ON Suppliers.SupplierID = Products.SupplierID)
+INNER JOIN [Order Details] ON Products.ProductID = [Order Details].ProductID
+GROUP BY CompanyName, ProductName;
+
+SELECT LastName, FirstName, SUM (Quantity * UnitPrice) AS Total
+FROM (Employees INNER JOIN Orders ON Employees.EmployeeID = Orders.EmployeeID)
+INNER JOIN [Order Details] ON Orders.OrderID = [Order Details].OrderID
+GROUP BY LastName, FirstName;

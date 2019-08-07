@@ -1,0 +1,4 @@
+SELECT ProductName, SUM ([Order Details].[UnitPrice]*[Quantity]) AS Total
+FROM Products INNER JOIN [Order Details] ON Products.ProductID = [Order Details].ProductID
+GROUP BY ProductName
+ORDER BY SUM ([Order Details].[UnitPrice]*[Quantity]) DESC;
